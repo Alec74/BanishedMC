@@ -57,7 +57,7 @@ $(document).on("click", ".ip", () => {
 $(document).ready(() => {
     let ip = $(".sip").attr("data-ip");
     let port = $(".sip").attr("data-port");
-    if (port == "" || port == null) port = "25565";
+    if (port == "" || port == null) port = "23513";
     if (ip == "" || ip == null) return console.error("Error fetching player count - is the IP set correctly in the HTML?");
     updatePlayercount(ip, port);
     // Updates every minute (not worth changing due to API cache)
@@ -71,7 +71,7 @@ const updatePlayercount = (ip, port) => {
         if (result.hasOwnProperty('online')) {
             $(".sip").html(result.online);
         } else {
-            $(".playercount").html("Server isn't online!");
+            $(".playercount").html("The Server is Currently Offline");
         }
     });
 };
