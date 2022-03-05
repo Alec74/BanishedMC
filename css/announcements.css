@@ -76,3 +76,7 @@ p{
     border-radius: 7px;
     font-family: "Arial Rounded MT Bold";
 }
+
+.header {
+    background-color: darkgrey;
+}
