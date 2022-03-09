@@ -45,7 +45,7 @@ p{
 .row {
     display: flex;
     align-items: center;
-    flex-warp: wrap;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -83,5 +83,11 @@ p{
 
 iframe {
     margin: auto;
-    padding: 8px 325px;
+    padding: 8px 0px;
+}
+
+#announcementsList li {
+    list-style-type: none;
+    margin: 0;
+    padding: 25px 0;
 }
