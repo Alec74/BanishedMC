@@ -1,55 +1,20 @@
 //unordered list tag with id announcementsList
 let ul = document.getElementById("announcementsList");
 
+//Add announcements into this list. Using filler for testing
+const announcements = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+];
+
 //Function to fill the unordered list with announcements and display to page
 let fillAnnouncements = (list) => {
-    for (let i = 0; i < list.length; i++) {
+    for (let i = 0; i < list.length; i++){
         let listEl = document.createElement("li");
         listEl.textContent = list[i];
         ul.append(listEl);
     };
 };
-
-// async function to fetch messages from a channelid and display them
-async function retrieveMessages(channelid) {
-    let announcements = [];
-    let pingName = [];
-    let pingIndex = [];
-    let retrieve = await fetch(`https://discord.com/api/v9/channels/${channelid}/messages`, {
-        method: 'GET',
-        headers: {
-            'authorization': 'NTg3MTEyNTcyOTY5NDE4Nzg3.YHBaAw.wHitDO_eIwHIHDfYPguw9nflhbA' //Authorization token for the specific channel
-        }
-    })
-        .then((response) => response.json())
-        // this promise adds the contents of messages to an array and replaces any @mentions with the username mentioned
-        .then((responseJson) => {
-            console.log(responseJson, 'res JSON');
-            for (let i = 0; i < responseJson.length; i++) {
-                if (responseJson[i].content) {
-                    let content = responseJson[i].content;
-                    if(responseJson[i].mentions){
-                        var pass = responseJson[i].content;
-                        for (let j = 0; j < responseJson[i].mentions.length; j++){
-                            let re = new RegExp(`<@!${responseJson[i].mentions[j].id}>`, 'g')
-                            pass = pass.replaceAll(re, `@${responseJson[i].mentions[j].username}`);
-                        }
-                    }
-                    if (pass){
-                        announcements.push(pass);
-                        pass = 0;
-                    }else{
-                        announcements.push(responseJson[i].content);
-                    }
-                }
-            }
-        })
-        .catch((error) => {
-            console.error(error);
-        })
-        // Calling the fillAnnouncements function to display data fetched
-    fillAnnouncements(announcements);
-}
-
-retrieveMessages('750114046887329885'); //Current channel id is from a test channel in a test server
-//WIP: Add .env file to hold authorization and channel id to safeguard it
+fillAnnouncements(announcements);
