@@ -188,7 +188,7 @@ iframe {
     color: black;
     border-radius: 80px;
     border: 2px solid darkgray;
-    background-color: lightgray;
+    background-color: #f5f5f5;
 }
 
 .page-item{
