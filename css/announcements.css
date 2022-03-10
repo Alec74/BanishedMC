@@ -1,21 +1,21 @@
-.navbar{
+.navbar {
     display: flex;
     align-items: center;
     padding: 20px;
 }
 
-nav{
+nav {
     flex: 1;
     text-align: right;
     font-family: "Arial Rounded MT Bold";
 }
 
-nav ul{
+nav ul {
     display: inline-block;
     list-style-type: none;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     margin-right: 20px;
 }
@@ -26,12 +26,12 @@ nav ul li img {
     margin-left: 15px;
 }
 
-a{
+a {
     text-decoration: none;
     color: #555;
 }
 
-p{
+p {
     color: #555;
 }
 
@@ -55,7 +55,7 @@ p{
     font-family: "Arial Rounded MT Bold";
 }
 
-.col-2 img{
+.col-2 img {
     max-width: 100%;
     padding: 50px 0;
 }
@@ -91,3 +91,133 @@ iframe {
     margin: 0;
     padding: 25px 0;
 }
+
+#header {
+    color: #fff;
+    padding: 250px 0px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(9, 4, 0, 0.46);
+    margin-bottom: -120px;
+    padding: 0px 40px;
+    padding-right: 5px;
+    height: 120px;
+    z-index: 4;
+    position: relative;
+    transition: all 0.75s;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+#annouceLink {
+    color: white;
+}
+
+
+.pagination {
+    padding: 0px 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#pagination-container{
+    padding: 0 20px;
+}
+
+.row {
+    padding: 20px 0;
+}
+
+.card1 {
+    border-radius: 30px;
+    border: 10px solid white;
+    background: url("../img/cardbg1.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    color: black;
+    font-size: larger;
+    font-weight: 900;
+    word-wrap: break-word;
+    padding: 30px 30px;
+}
+
+.card2 {
+    border-radius: 40px;
+    border: 3px solid rgb(218, 217, 217);
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    color: black;
+    font-size: larger;
+    font-weight: 900;
+    word-wrap: break-word;
+    padding: 10px 10px;
+    margin: 20px 0px;
+}
+
+#page-selector {
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    padding: 12.5px 20px;
+    margin-left: auto;
+    margin-top: auto;
+    white-space: nowrap;
+}
+
+.page-link {
+    margin-right: auto;
+    padding: 20px 20px;
+    color: black;
+    border-radius: 80px;
+    border: 2px solid darkgray;
+    background-color: #f5f5f5;
+}
+
+.page-item{
+    margin: 10px 10px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: wheat;
+}
+
+
+.activePage {
+    background-color: white;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .pagination{
+
+    }
+}
+
+@media only screen and (max-width: 786px) {
+    .pagination{
+        flex-direction: column;
+        text-align: center;
+    }
+  }
