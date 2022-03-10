@@ -24,9 +24,7 @@
     <!-- New code with bootstrap -->
 
     <!-- Navbar -->
-
     <section id="navbar">
-
         <nav class="navbar">
             <div class="container-fluid">
                 <div class="logo">
@@ -40,69 +38,38 @@
                 </div>
             </div>
         </nav>
-
-        <!-- <ul class="nav">
-            <li class="nav-item">
-                <div class="logo">
-                    <img src="img/logo.png" width="125" alt="Highlands Logo">
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link  active" aria-current="page"  href="#">Announcements</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Discord</a>
-            </li>
-        </ul> -->
     </section>
     <!-- Navbar overlay -->
-
-
     <section id="header"
         style="background-image: linear-gradient(to top, rgba(0,0,0, 0.65), rgba(0,0,0,0.10)), url(./img/headerbg.jfif);">
         <div id="inner-header" class="text-center">
-
-
             <h1 id="header-title">
-
                 <span>Server News</span>
-
             </h1>
-
-
             <h5 id="header-subtitle" class="">Keep up to date on official &amp; important news from TheHighlandsMC.</h5>
-
         </div>
     </section>
-
-
-    <!-- Grid to display announcement cards -->
-    <!-- Redoing it -->
-
-
-
-
+    <!-- Grid to display announcement cards and pagination tab -->
     <div class="container" id="content">
         <section id="announcements">
+            <!-- Pagination section -->
             <section id="pagination-container">
                 <div class="card2">
                     <div class="card-body">
                         <nav id="pagination-nav" aria-label="Page navigation">
                             <ul class="pagination">
+                                <!-- the ids are referenced in announcements.js for functionality -->
                                 <li class="page-item"></li>
-                                <li class="page-item"><a class="page-link" href="#">Discord News</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Web News</a></li>
-                                <li class="page-item"><a class="page-link" href="#">All News</a></li>
+                                <li id="discordNews" class="page-item"><a id="discordLink" class="page-link" href="#">Discord News</a></li>
+                                <li id="webNews" class="page-item"><a id="webLink" class="page-link" href="#">Web News</a></li>
+                                <li id="allNews" class="page-item"><a id="allLink" class="page-link" href="#">All News</a></li>
                                 <li class="page-item" id="page-selector">
                                     <a href="#">
-                                        <i class="fa-solid fa-angle-left"></i>
+                                        <i id="pageLeft" class="fa-solid fa-angle-left"></i>
                                     </a>
-                                    <span>Page 1</span>
+                                    <span id="pageNum">Page 1</span>
                                     <a href="#">
-                                        <i class="fas fa-angle-right"></i>
+                                        <i id="pageRight" class="fas fa-angle-right"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -110,79 +77,12 @@
                     </div>
                 </div>
             </section>
+            <!-- Content in this row is filled with javascript -->
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card1">
-                        <div class="card1-body">
-                            This is some text within a card1 body.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card1">
-                        <div class="card1-body">
-                            This is some text within a card1 body.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card1">
-                        <div class="card1-body">
-                            This is some text within a card1 body.
-                        </div>
-                    </div>
-                </div>
-                <!-- </div> -->
-                <!-- <div class="row"> -->
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card1">
-                        <div class="card1-body">
-                            This is some text within a card1 body.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card1">
-                        <div class="card1-body">
-                            This is some text within a card1 body.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card1">
-                        <div class="card1-body">
-                            This is some text within a card1 body.
-                        </div>
-                    </div>
-                </div>
-                <!-- </div> -->
-                <!-- <div class="row"> -->
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card1">
-                        <div class="card1-body">
-                            This is some text within a card1 body.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card1">
-                        <div class="card1-body">
-                            This is some text within a card1 body.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card1">
-                        <div class="card1-body">
-                            This is some text within a card1 body.
-                        </div>
-                    </div>
-                </div>
             </div>
     </div>
     </section>
 
     <script src="js/announcements.js" type="text/javascript"></script>
 </body>
-
 </html>
