@@ -1,0 +1,75 @@
+<!-- New code with bootstrap -->
+
+<!-- Navbar -->
+<div class="container">
+    <section id="navbar">
+
+
+        <nav class="navbar navbar-expand">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img id="navLogo" src="img/logo.png"
+                        alt="Highlands Logo"></a>
+                <div id="menu">
+                    <a class="nav-link" aria-current="page" href="/announcements"><i
+                            class="fa-solid fa-scroll fa-2xl"></i></a>
+                    <a class="nav-link" href="https://discord.gg/banishedmc"><i
+                            class="fa-brands fa-discord fa-2xl"></i></a>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+    </section>
+    <!-- Navbar overlay -->
+    <section id="header"
+        style="background-image: linear-gradient(to top, rgba(255, 255, 255, 0.267), rgba(0,0,0,0.10));">
+        <div id="inner-header" class="text-center">
+            <h1 id="header-title">
+                <span>Server News</span>
+            </h1>
+            <h5 id="header-subtitle" class="">Keep up to date on official &amp; important news from BanishedMC.</h5>
+        </div>
+    </section>
+    <!-- Grid to display announcement cards and pagination tab -->
+    <div class="container" id="content">
+        <section id="announcements">
+            <!-- Pagination section -->
+            <section id="pagination-container">
+                <div class="card2">
+                    <div class="card-body">
+                        <nav id="pagination-nav" aria-label="Page navigation">
+                            <ul class="pagination">
+                                <!-- the ids are referenced in announcements.js for functionality -->
+                                <li class="page-item"></li>
+                                <li id="discordNews" class="page-item"><a id="discordLink" class="page-link"
+                                        href="#">Discord News</a></li>
+                                <li id="webNews" class="page-item"><a id="webLink" class="page-link" href="#">Web
+                                        News</a>
+                                </li>
+                                <li id="allNews" class="page-item"><a id="allLink" class="page-link" href="#">All
+                                        News</a>
+                                </li>
+                                <li class="page-link page-item" id="page-selector">
+                                    <a href="#">
+                                        <i id="pageLeft" class="fa-solid fa-angle-left"></i>
+                                    </a>
+                                    <span id="pageNum">Page 1</span>
+                                    <a href="#">
+                                        <i id="pageRight" class="fas fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+            <!-- Content in this row is filled with javascript -->
+            <div class="row">
+            </div>
+    </div>
+    </section>
+
+    <script src="js/announcements.js" type="text/javascript"></script>
+</div>
