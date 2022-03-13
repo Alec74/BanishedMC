@@ -7,8 +7,7 @@
 
         <nav class="navbar navbar-expand">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"><img id="navLogo" src="img/logo.png"
-                        alt="Highlands Logo"></a>
+                <a class="navbar-brand" href="/"><img id="navLogo" src="img/logo.png" alt="Highlands Logo"></a>
                 <div id="menu">
                     <a class="nav-link" aria-current="page" href="/announcements"><i
                             class="fa-solid fa-scroll fa-2xl"></i></a>
@@ -17,7 +16,6 @@
                 </div>
             </div>
         </nav>
-
 
 
 
@@ -67,9 +65,31 @@
             </section>
             <!-- Content in this row is filled with javascript -->
             <div class="row">
+                {{#each messages}}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a class="trigger" id="modal-link">
+                        <div class="card1">
+                            <div class="card1-body">
+                                <p id="usernameMention" class="hide">{{{this.mentions.[0].username}}}</p>
+                                <p id="idMention" class="hide">{{{this.mentions.[0].id}}}</p>
+                                <h6 id="content">{{{this.content}}}</h6>
+                                <h3>{{{this.author}}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{!-- <div id="modal" class="{{{this.id}}} hide modal">
+                    <h1>{{{this.author}}}</h1>
+                    <p>{{{this.content}}}</p>
+                </div> --}}
+                {{/each}}
+
+
             </div>
     </div>
     </section>
-
+    <footer class="footer">
+        <a href="options">Developer Options</a>
+    </footer>
     <script src="js/announcements.js" type="text/javascript"></script>
 </div>

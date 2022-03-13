@@ -20,90 +20,89 @@ let i = 0;
 let j = 9;
 
 
-
 //temporary lists for testing
 //TODO: Seed these arrays with data to use... likely backend/fetch
 const discordNewsTitles = [
-    "Lorem ipsum",
-    "dolor sit amet,",
-    "consectetur adipiscing",
-    "elit, sed",
-    "do eiusmod",
-    "tempor incididunt",
-    "ut labore et",
-    "dolore magna",
-    "aliqua. Ut",
-    "enim ad",
-    "minim veniam,",
-    "quis nostrud",
-    "exercitation ullamco",
-    "laboris nisi",
-    "ut aliquip",
-    "ex ea commodo",
-    "consequat. Duis"
+    // "Lorem ipsum",
+    // "dolor sit amet,",
+    // "consectetur adipiscing",
+    // "elit, sed",
+    // "do eiusmod",
+    // "tempor incididunt",
+    // "ut labore et",
+    // "dolore magna",
+    // "aliqua. Ut",
+    // "enim ad",
+    // "minim veniam,",
+    // "quis nostrud",
+    // "exercitation ullamco",
+    // "laboris nisi",
+    // "ut aliquip",
+    // "ex ea commodo",
+    // "consequat. Duis"
 ];
 const webNewsTitles = [
-    "aute irure",
-    "dolor in",
-    "reprehenderit in",
-    "aliqua. Ut",
-    "enim ad",
-    "minim veniam,",
-    "quis nostrud",
-    "exercitation ullamco",
-    "laboris nisi",
-    "ut aliquip",
-    "ex ea commodo"
+    // "aute irure",
+    // "dolor in",
+    // "reprehenderit in",
+    // "aliqua. Ut",
+    // "enim ad",
+    // "minim veniam,",
+    // "quis nostrud",
+    // "exercitation ullamco",
+    // "laboris nisi",
+    // "ut aliquip",
+    // "ex ea commodo"
 ];
 const allNewsTitles = [
-    "consequat. Duis",
-    "aute irure",
-    "dolor in",
-    "reprehenderit in",
-    "voluptate velit",
-    "esse cillum",
-    "dolore eu",
-    "fugiat nulla",
-    "pariatur. Excepteur",
-    "sint occaecat",
-    "cupidatat non",
-    "proident, sunt",
-    "in culpa",
-    "qui officia",
-    "deserunt mollit",
-    "anim id est laborum",
-    "consequat. Duis",
-    "aute irure",
-    "dolor in",
-    "reprehenderit in",
-    "voluptate velit",
-    "esse cillum",
-    "dolore eu",
-    "fugiat nulla",
-    "pariatur. Excepteur",
-    "sint occaecat",
-    "cupidatat non",
-    "proident, sunt",
-    "in culpa",
-    "qui officia",
-    "deserunt mollit",
-    "anim id est laborum",
-    "consequat. Duis",
-    "aute irure",
-    "dolor in",
-    "reprehenderit in",
-    "voluptate velit",
-    "esse cillum",
-    "dolore eu",
-    "fugiat nulla",
-    "pariatur. Excepteur",
-    "sint occaecat",
-    "cupidatat non",
-    "proident, sunt",
-    "in culpa",
-    "qui officia",
-    "deserunt mollit",
-    "anim id est laborum"
+    // "consequat. Duis",
+    // "aute irure",
+    // "dolor in",
+    // "reprehenderit in",
+    // "voluptate velit",
+    // "esse cillum",
+    // "dolore eu",
+    // "fugiat nulla",
+    // "pariatur. Excepteur",
+    // "sint occaecat",
+    // "cupidatat non",
+    // "proident, sunt",
+    // "in culpa",
+    // "qui officia",
+    // "deserunt mollit",
+    // "anim id est laborum",
+    // "consequat. Duis",
+    // "aute irure",
+    // "dolor in",
+    // "reprehenderit in",
+    // "voluptate velit",
+    // "esse cillum",
+    // "dolore eu",
+    // "fugiat nulla",
+    // "pariatur. Excepteur",
+    // "sint occaecat",
+    // "cupidatat non",
+    // "proident, sunt",
+    // "in culpa",
+    // "qui officia",
+    // "deserunt mollit",
+    // "anim id est laborum",
+    // "consequat. Duis",
+    // "aute irure",
+    // "dolor in",
+    // "reprehenderit in",
+    // "voluptate velit",
+    // "esse cillum",
+    // "dolore eu",
+    // "fugiat nulla",
+    // "pariatur. Excepteur",
+    // "sint occaecat",
+    // "cupidatat non",
+    // "proident, sunt",
+    // "in culpa",
+    // "qui officia",
+    // "deserunt mollit",
+    // "anim id est laborum"
 ];
 
 
@@ -129,8 +128,8 @@ const addCard = (content) => {
 //function to addCards from an array of data
 let loadNews = (list, i, j) => {
     deleteChild(row);
-    for (i; i < j; i++){
-        if (list[i]){
+    for (i; i < j; i++) {
+        if (list[i]) {
             addCard(list[i]);
         }
     }
@@ -140,16 +139,16 @@ let loadNews = (list, i, j) => {
 function deleteChild(target) {
     var child = target.lastElementChild;
     while (child) {
-      target.removeChild(child);
-      child = target.lastElementChild;
+        target.removeChild(child);
+        child = target.lastElementChild;
     }
-  }
+}
 
 //Make news buttons have event listeners and have a function to load specific content
 discordNews.addEventListener("click", function () {
     event.preventDefault();
-    pageNum.textContent = `Page ${num=1}`; //display initial page number of 1
-    loadNews(discordNewsTitles, i=0, j=9); //set values of i and j for reusability as well as values in function
+    pageNum.textContent = `Page ${num = 1}`; //display initial page number of 1
+    // loadNews(discordNewsTitles, i=0, j=9); //set values of i and j for reusability as well as values in function
     clicked = 'discordNews';
     discordLink.classList.add("activePage"); //add class to differentiate current page from others
     webLink.classList.remove("activePage"); //remove other instances of class
@@ -157,8 +156,8 @@ discordNews.addEventListener("click", function () {
 });
 webNews.addEventListener("click", function () {
     event.preventDefault();
-    pageNum.textContent = `Page ${num=1}`;
-    loadNews(webNewsTitles, i=0, j=9);
+    pageNum.textContent = `Page ${num = 1}`;
+    // loadNews(webNewsTitles, i=0, j=9);
     clicked = 'webNews';
     webLink.classList.add("activePage");
     discordLink.classList.remove("activePage");
@@ -166,8 +165,8 @@ webNews.addEventListener("click", function () {
 })
 allNews.addEventListener("click", function () {
     event.preventDefault();
-    pageNum.textContent = `Page ${num=1}`;
-    loadNews(allNewsTitles, i=0, j=9);
+    pageNum.textContent = `Page ${num = 1}`;
+    // loadNews(allNewsTitles, i=0, j=9);
     clicked = 'allNews';
     allLink.classList.add("activePage");
     discordLink.classList.remove("activePage");
@@ -177,7 +176,7 @@ allNews.addEventListener("click", function () {
 
 //initiate variables for pagination and load first page view
 let clicked = 'allNews';
-loadNews(allNewsTitles, 0, 9); //on page load display discord news
+// loadNews(allNewsTitles, 0, 9); //on page load display discord news
 allLink.classList.add("activePage");
 
 //pagenumber text content change on clicks
@@ -186,25 +185,25 @@ pageNumContent = `Page ${num}`;
 
 //pagination event listeners
 // page right
-pageRight.addEventListener("click", function (){
+pageRight.addEventListener("click", function () {
     event.preventDefault(); //stop page reload
     //Control flow to check which page is active and display results accordingly
-    if (clicked === 'discordNews'){
-        if (discordNewsTitles.length > j){
-            loadNews(discordNewsTitles, i+=9, j+=9) //move iterable right by 9 and display the row
-            pageNumContent = `Page ${num+=1}`;
+    if (clicked === 'discordNews') {
+        if (discordNewsTitles.length > j) {
+            // loadNews(discordNewsTitles, i+=9, j+=9) //move iterable right by 9 and display the row
+            pageNumContent = `Page ${num += 1}`;
             pageNum.textContent = pageNumContent; //set the page number and display to page
         }
-    } else if (clicked === 'webNews'){
+    } else if (clicked === 'webNews') {
         if (webNewsTitles.length > j) {
-            loadNews(webNewsTitles, i+=9, j+=9);
-            pageNumContent = `Page ${num+=1}`;
+            // loadNews(webNewsTitles, i+=9, j+=9);
+            pageNumContent = `Page ${num += 1}`;
             pageNum.textContent = pageNumContent;
         }
-    } else if (clicked === 'allNews'){
-        if (allNewsTitles.length > j){
-            loadNews(allNewsTitles, i+=9, j+=9);
-            pageNumContent = `Page ${num+=1}`;
+    } else if (clicked === 'allNews') {
+        if (allNewsTitles.length > j) {
+            // loadNews(allNewsTitles, i+=9, j+=9);
+            pageNumContent = `Page ${num += 1}`;
             pageNum.textContent = pageNumContent;
         }
     }
@@ -213,23 +212,40 @@ pageRight.addEventListener("click", function (){
 //page left reversed above version
 pageLeft.addEventListener("click", function () {
     event.preventDefault();
-    if (clicked === 'discordNews'){
-        if (i > 0){
-            loadNews(discordNewsTitles, i-=9, j-=9); //move iterable left by 9 and display the row
-            pageNumContent = `Page ${num-=1}`;
+    if (clicked === 'discordNews') {
+        if (i > 0) {
+            // loadNews(discordNewsTitles, i-=9, j-=9); //move iterable left by 9 and display the row
+            pageNumContent = `Page ${num -= 1}`;
             pageNum.textContent = pageNumContent;
         }
-    } else if (clicked === 'webNews'){
-        if (i > 0){
-            loadNews(webNewsTitles, i-=9, j-=9);
-            pageNumContent = `Page ${num-=1}`;
+    } else if (clicked === 'webNews') {
+        if (i > 0) {
+            // loadNews(webNewsTitles, i-=9, j-=9);
+            pageNumContent = `Page ${num -= 1}`;
             pageNum.textContent = pageNumContent;
         }
-    } else if (clicked === 'allNews'){
-        if (i > 0){
-            loadNews(allNewsTitles, i-=9, j-=9);
-            pageNumContent = `Page ${num-=1}`;
+    } else if (clicked === 'allNews') {
+        if (i > 0) {
+            // loadNews(allNewsTitles, i-=9, j-=9);
+            pageNumContent = `Page ${num -= 1}`;
             pageNum.textContent = pageNumContent;
         }
     }
 })
+
+
+// testing server GET on frontend
+// let content = document.querySelector("#content");
+// let id = document.querySelector("#idMention")
+// let userMention = document.querySelectorAll("p#usernameMention")
+// content = content.textContent;
+// let message_id = {{{messages.[0].message_id}}}
+
+
+// Regex to replace @mentions Id with username
+// let re = new RegExp(`<@!${responseJson[i].mentions[j].id}>`, 'g')
+// content = content.replaceAll(re, `@${responseJson[i].mentions[j].username}`);
+
+
+
+// console.log(content)

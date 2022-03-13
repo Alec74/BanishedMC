@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS banished_db;
+
+CREATE DATABASE banished_db;

@@ -69,11 +69,11 @@ p {
 
 .btn {
     display: inline-block;
-    background: #ff523b;
+    background: black;
     color: #fff;
-    padding: 8px 30px;
+    padding: 14px 20px;
     margin: 30px 0;
-    border-radius: 7px;
+    border-radius: 10px;
     font-family: "Arial Rounded MT Bold";
 }
 
@@ -216,6 +216,21 @@ iframe {
     width: 100px;
     margin-top: 10px;
     margin-left: -40px;
+}
+
+.footer{
+	width: 500%;
+    margin-left: -200%;
+    background-color:black;
+    padding: 100px;
+}
+
+.hide{
+    display:none;
+}
+
+#modal-link:hover{
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 992px) {
