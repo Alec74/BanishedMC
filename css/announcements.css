@@ -4,6 +4,19 @@
     padding: 20px;
 }
 
+body {
+    /*Want to change background image?*/
+    /*Upload a new one to the img folder.*/
+    /*Make sure you name it 'minecraft.jpg'*/
+    background: linear-gradient(rgba(20, 26, 35, 0.55), rgba(20, 26, 35, 0.55)),
+        url("../img/minecraft.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Open Sans", Helvetica;
+    margin: 0;
+    position: relative;
+}
+
+
 nav {
     flex: 1;
     text-align: right;
@@ -32,7 +45,7 @@ a {
 }
 
 p {
-    color: #555;
+    color: white;
 }
 
 .container {
@@ -135,7 +148,7 @@ iframe {
     flex-direction: row;
 }
 
-#pagination-container{
+#pagination-container {
     padding: 0 20px;
 }
 
@@ -145,7 +158,8 @@ iframe {
 
 .card1 {
     border-radius: 30px;
-    border: 10px solid white;
+    /* border: 10px; */
+    margin: 10px 0;
     background: url("../img/cardbg1.jfif");
     background-repeat: no-repeat;
     background-size: cover;
@@ -182,6 +196,22 @@ iframe {
     white-space: nowrap;
 }
 
+#pageNum {
+    -webkit-text-fill-color: black;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-size: 43px;
+}
+
+.pageSwitch {
+    -webkit-text-fill-color: black;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-size: 43px;
+}
+
 .page-link {
     margin-right: auto;
     padding: 20px 20px;
@@ -191,7 +221,7 @@ iframe {
     background-color: #f5f5f5;
 }
 
-.page-item{
+.page-item {
     margin: 10px 10px;
 }
 
@@ -208,16 +238,46 @@ iframe {
     background-color: white;
 }
 
+.modalbtn:hover {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.author {
+    -webkit-text-fill-color: white;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-size: 33px;
+    word-wrap: normal;
+}
+
+.summary {
+    -webkit-text-fill-color: black;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-size: 23px;
+    /* color: black; */
+    /* font-size: 20px; */
+}
 
 @media only screen and (max-width: 992px) {
-    .pagination{
-
-    }
+    .pagination {}
 }
 
 @media only screen and (max-width: 786px) {
-    .pagination{
+    .pagination {
         flex-direction: column;
         text-align: center;
     }
-  }
+}
+
+@media only screen and (max-width: 354px) {
+    .author {
+        font-size: 20px;
+    }
+}

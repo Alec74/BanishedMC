@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Highlands Announcements</title>
+    <title>BanishedMC Announcements</title>
     <meta name="description" content="BanishedMC Announcement Page'.">
     <meta property="og:title" content="BanishedMC Announcement Page">
     <meta property="og:site_name" content="BanishedMC">
@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/announcements.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -40,8 +43,7 @@
         </nav>
     </section>
     <!-- Navbar overlay -->
-    <section id="header"
-        style="background-image: linear-gradient(to top, rgba(0,0,0, 0.65), rgba(0,0,0,0.10)), url(./img/headerbg.jfif);">
+    <section id="header" style="background-image: linear-gradient(to top, rgba(0,0,0, 0.65), rgba(0,0,0,0.10))">
         <div id="inner-header" class="text-center">
             <h1 id="header-title">
                 <span>Server News</span>
@@ -60,16 +62,19 @@
                             <ul class="pagination">
                                 <!-- the ids are referenced in announcements.js for functionality -->
                                 <li class="page-item"></li>
-                                <li id="discordNews" class="page-item"><a id="discordLink" class="page-link" href="#">Discord News</a></li>
-                                <li id="webNews" class="page-item"><a id="webLink" class="page-link" href="#">Web News</a></li>
-                                <li id="allNews" class="page-item"><a id="allLink" class="page-link" href="#">All News</a></li>
+                                <li id="discordNews" class="page-item"><a id="discordLink" class="page-link"
+                                        href="#">Discord News</a></li>
+                                <li id="webNews" class="page-item hide"><a id="webLink" class="page-link" href="#">Web
+                                        News</a></li>
+                                <li id="allNews" class="page-item hide"><a id="allLink" class="page-link" href="#">All
+                                        News</a></li>
                                 <li class="page-item" id="page-selector">
                                     <a href="#">
-                                        <i id="pageLeft" class="fa-solid fa-angle-left"></i>
+                                        <i id="pageLeft" class="pageSwitch fa-solid fa-angle-left"></i>
                                     </a>
                                     <span id="pageNum">Page 1</span>
                                     <a href="#">
-                                        <i id="pageRight" class="fas fa-angle-right"></i>
+                                        <i id="pageRight" class="pageSwitch fas fa-angle-right"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -79,10 +84,34 @@
             </section>
             <!-- Content in this row is filled with javascript -->
             <div class="row">
+
+
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="newsModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="storage">
+                            <!-- <div class="modal-body">
+                                ...
+                            </div> -->
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div> -->
+                    </div>
+                </div>
             </div>
     </div>
     </section>
 
+    <script type="text/javascript" src="data/all.json"></script>
     <script src="js/announcements.js" type="text/javascript"></script>
 </body>
+
 </html>
