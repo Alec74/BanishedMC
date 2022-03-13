@@ -8,10 +8,10 @@ body {
     /*Want to change background image?*/
     /*Upload a new one to the img folder.*/
     /*Make sure you name it 'minecraft.jpg'*/
-    background: linear-gradient(rgba(20, 26, 35, 0.55), rgba(20, 26, 35, 0.55)),
+    background: linear-gradient(rgba(20, 26, 35, 0.178), rgba(20, 26, 35, 0.55)),
         url("../img/minecraft.jpg") no-repeat center center fixed;
     background-size: cover;
-    font-family: "Open Sans", Helvetica;
+    /* font-family: "Open Sans", Helvetica; */
     margin: 0;
     position: relative;
 }
@@ -140,6 +140,21 @@ iframe {
     color: white;
 }
 
+.font-title{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-text{
+    font-family: 'Fredoka', sans-serif;
+}
+
+#header-title{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#header-subtitle{
+    font-family: 'Montserrat', sans-serif;
+}
 
 .pagination {
     padding: 0px 0;
@@ -160,7 +175,7 @@ iframe {
     border-radius: 30px;
     /* border: 10px; */
     margin: 10px 0;
-    background: url("../img/cardbg1.jfif");
+    background: linear-gradient(rgba(20, 26, 35, 0.767), rgba(20, 26, 35, 0.55)), url("../img/cardbg1.jfif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -197,18 +212,13 @@ iframe {
 }
 
 #pageNum {
-    -webkit-text-fill-color: black;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
+    color: white ;
+    font-family: 'Montserrat', sans-serif;
     font-size: 43px;
 }
 
 .pageSwitch {
-    -webkit-text-fill-color: black;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
+    color: white;
     font-size: 43px;
 }
 
@@ -223,6 +233,7 @@ iframe {
 
 .page-item {
     margin: 10px 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-link {
@@ -238,6 +249,14 @@ iframe {
     background-color: white;
 }
 
+.modal-body{
+    font-size: 23px;
+}
+
+.modal-title{
+    font-size: 33px;
+}
+
 .modalbtn:hover {
     cursor: pointer;
 }
@@ -247,19 +266,15 @@ iframe {
 }
 
 .author {
-    -webkit-text-fill-color: white;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+    color: white;
     font-size: 33px;
+    font-family: 'Montserrat', sans-serif;
     word-wrap: normal;
 }
 
 .summary {
-    -webkit-text-fill-color: black;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
     font-size: 23px;
     /* color: black; */
     /* font-size: 20px; */

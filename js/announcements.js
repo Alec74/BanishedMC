@@ -597,9 +597,11 @@ for (let k = 0; k < trigger.length; k++) {
     let i = trigger[k].getAttribute('data-id');
     trigger[k].addEventListener('click', function () {
         // console.log(trigger[k])
-        modalContent.textContent = content0[i-1]
+        modalContent.textContent = content0[i-1];
+        modalContent.classList.add('font-text')
         let title = document.querySelector('.modal-title');
-        title.textContent = authors[i-1]
+        title.classList.add('font-title');
+        title.textContent = authors[i-1];
     })
 }
 }
