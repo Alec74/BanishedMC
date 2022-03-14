@@ -9,7 +9,7 @@ const allData = require('./all.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
   User.truncate();
-  setTimeout(1000);
+
 
   const users = await User.create({ 
     name: `${process.env.DEV_USER}`,
