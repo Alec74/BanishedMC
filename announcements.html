@@ -37,6 +37,8 @@
                     <a href="index.html"><img src="img/logo.png" width="125" alt="Highlands Logo"></a>
                 </div>
                 <div id="menu">
+                    <a class="nav-link darkToggle" aria-current="page" href="#"><i
+                        class="darkIcon fa-regular fa-moon fa-2xl"></i></a>
                     <a class="nav-link  active" aria-current="page" href="announcements.html"><i
                             class="fa-solid fa-scroll fa-2xl"></i></a>
                     <a class="nav-link" href="https://discord.gg/BanishedMC"><i
@@ -46,7 +48,7 @@
         </nav>
     </section>
     <!-- Navbar overlay -->
-    <section id="header" style="background-image: linear-gradient(to top, rgba(0,0,0, 0.65), rgba(0,0,0,0.10))">
+    <section id="header" >
         <div id="inner-header" class="text-center">
             <h1 id="header-title">
                 <span>Server News</span>
@@ -75,7 +77,7 @@
                                     <a href="#">
                                         <i id="pageLeft" class="pageSwitch fa-solid fa-angle-left"></i>
                                     </a>
-                                    <span id="pageNum">Page 1</span>
+                                    <span class="pageNum">Page 1</span>
                                     <a href="#">
                                         <i id="pageRight" class="pageSwitch fas fa-angle-right"></i>
                                     </a>
@@ -113,6 +115,7 @@
     </div>
     </section>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="data/all.json"></script>
     <script src="js/announcements.js" type="text/javascript"></script>
 </body>
