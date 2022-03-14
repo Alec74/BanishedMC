@@ -13,7 +13,8 @@ let message_id = [];
 let author = [];
 let message_embed = [];
 let mentions = [];
-let message_embed_url = []
+let message_embed_url = [];
+let createdTimestamp = [];
 
 let all = [];
 
@@ -29,16 +30,19 @@ let test = () => { //function being exported to server
                     message_id.push(messages.toJSON()[i].id); //csv of message_ids
                     author.push(messages.toJSON()[i].author.username); //authors
                     message_embed.push(messages.toJSON()[i].embeds);
-                    mentions.push(messages.toJSON()[i].mentions.users);
-                    // console.log(content);
+                    mentions.push(messages.toJSON()[i].mentions.users.toJSON());
+                    createdTimestamp.push(messages.toJSON()[i].createdTimestamp)
+                    // console.log(createdTimestamp[i]);
                     all.push({
                         "id": i+1,
                         "content": content[i],
                         "message_id": message_id[i],
                         "author": author[i],
                         "message_embed": message_embed[i],
-                        "mentions": mentions[i]
+                        "mentions": mentions[i],
+                        "createdTimestamp": createdTimestamp[i]
                     })
+                    // console.log(messages)
                 }
                 
                 for (let k = 0; k < message_embed.length; k++){
@@ -46,6 +50,9 @@ let test = () => { //function being exported to server
                         message_embed_url.push(message_embed[k][0].url)
                     }
                 }
+                
+                // console.log(messages.toJSON())
+                
 
 
 

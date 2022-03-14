@@ -28,10 +28,14 @@ Message.init(
         },
         mentions: {
             type: DataTypes.JSON,
+        },
+        createdTimestamp: {
+            type: DataTypes.DATE
         }
     },
     {
         sequelize,
+        timestamps: false,
         modelName: 'message',
       }
 )

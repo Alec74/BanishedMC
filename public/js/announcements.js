@@ -175,7 +175,7 @@ allNews.addEventListener("click", function () {
 
 
 //initiate variables for pagination and load first page view
-let clicked = 'allNews';
+let clicked = 'discordNews';
 // loadNews(allNewsTitles, 0, 9); //on page load display discord news
 allLink.classList.add("activePage");
 
@@ -183,30 +183,38 @@ allLink.classList.add("activePage");
 num = 1;
 pageNumContent = `Page ${num}`;
 
+let allContent = document.querySelectorAll('.try');
+
 //pagination event listeners
 // page right
 pageRight.addEventListener("click", function () {
     event.preventDefault(); //stop page reload
     //Control flow to check which page is active and display results accordingly
-    if (clicked === 'discordNews') {
-        if (discordNewsTitles.length > j) {
-            // loadNews(discordNewsTitles, i+=9, j+=9) //move iterable right by 9 and display the row
-            pageNumContent = `Page ${num += 1}`;
-            pageNum.textContent = pageNumContent; //set the page number and display to page
-        }
-    } else if (clicked === 'webNews') {
-        if (webNewsTitles.length > j) {
-            // loadNews(webNewsTitles, i+=9, j+=9);
+    // if (clicked === 'discordNews') {
+    //     if (allContent.length > j) {
+    //         // loadNews(discordNewsTitles, i+=9, j+=9) //move iterable right by 9 and display the row
+    //         renderCards(i+=9, j+=9);
+    //         console.log(j)
+    //         pageNumContent = `Page ${num += 1}`;
+    //         pageNum.textContent = pageNumContent; //set the page number and display to page
+    //     }
+    // } else if (clicked === 'webNews') {
+    //     if (webNewsTitles.length > j) {
+    //         // loadNews(webNewsTitles, i+=9, j+=9);
+    //         pageNumContent = `Page ${num += 1}`;
+    //         pageNum.textContent = pageNumContent;
+    //     }
+    // } else if (clicked === 'allNews') {
+    //     if (allNewsTitles.length > j) {
+    //         // loadNews(allNewsTitles, i+=9, j+=9);
+    //         pageNumContent = `Page ${num += 1}`;
+    //         pageNum.textContent = pageNumContent;
+    //     }
+    // }
+    renderCards(i+=9, j+=9);
+            console.log(i,j)
             pageNumContent = `Page ${num += 1}`;
             pageNum.textContent = pageNumContent;
-        }
-    } else if (clicked === 'allNews') {
-        if (allNewsTitles.length > j) {
-            // loadNews(allNewsTitles, i+=9, j+=9);
-            pageNumContent = `Page ${num += 1}`;
-            pageNum.textContent = pageNumContent;
-        }
-    }
 })
 
 //page left reversed above version
@@ -234,18 +242,29 @@ pageLeft.addEventListener("click", function () {
 })
 
 
-// testing server GET on frontend
-// let content = document.querySelector("#content");
-// let id = document.querySelector("#idMention")
-// let userMention = document.querySelectorAll("p#usernameMention")
-// content = content.textContent;
-// let message_id = {{{messages.[0].message_id}}}
 
+// console.log(allContent);
+// allContent.forEach(el => {
+//     el.classList.add('hide');
+// });
 
-// Regex to replace @mentions Id with username
-// let re = new RegExp(`<@!${responseJson[i].mentions[j].id}>`, 'g')
-// content = content.replaceAll(re, `@${responseJson[i].mentions[j].username}`);
+const renderCards = (i,j) => {
+    // allContent.forEach(el => {
+        // el.classList.remove('show');
+        // el.classList.add('hide');
+        // console.log(el.classList)
+    // });
+    for (let k = 0; k < allContent.length; k++){
+        allContent[k].classList.remove('show');
+        allContent[k].classList.add('hide');
+        
+    }
 
+    for (i; i < j; i++){
+        allContent[i].classList.add('show');
+        allContent[i].classList.remove('hide');
+        console.log(allContent[i].classList)
+    }
+};
 
-
-// console.log(content)
+renderCards(0,9);

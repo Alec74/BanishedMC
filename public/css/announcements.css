@@ -226,8 +226,13 @@ iframe {
 }
 
 .hide{
-    display:none;
+    display: none;
 }
+
+.show{
+    display: block;
+}
+
 
 #modal-link:hover{
     cursor: pointer;

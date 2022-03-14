@@ -43,12 +43,6 @@
                                 <li class="page-item"></li>
                                 <li id="discordNews" class="page-item"><a id="discordLink" class="page-link"
                                         href="#">Discord News</a></li>
-                                <li id="webNews" class="page-item"><a id="webLink" class="page-link" href="#">Web
-                                        News</a>
-                                </li>
-                                <li id="allNews" class="page-item"><a id="allLink" class="page-link" href="#">All
-                                        News</a>
-                                </li>
                                 <li class="page-link page-item" id="page-selector">
                                     <a href="#">
                                         <i id="pageLeft" class="fa-solid fa-angle-left"></i>
@@ -65,24 +59,38 @@
             </section>
             <!-- Content in this row is filled with javascript -->
             <div class="row">
+
                 {{#each messages}}
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a class="trigger" id="modal-link">
+                <div class="try hide col-lg-4 col-md-6 col-sm-12">
+                    <a class='trigger modalbtn' data-bs-target="#newsModal" data-bs-toggle="modal" id="modal-link">
                         <div class="card1">
                             <div class="card1-body">
-                                <p id="usernameMention" class="hide">{{{this.mentions.[0].username}}}</p>
-                                <p id="idMention" class="hide">{{{this.mentions.[0].id}}}</p>
-                                <h6 id="content">{{{this.content}}}</h6>
                                 <h3>{{{this.author}}}</h3>
+                                <h3>{{{format_date this.createdTimestamp}}}</h3>
+                                <h6 id="contentBody">{{{this.content}}}</h6>
                             </div>
                         </div>
                     </a>
                 </div>
-                {{!-- <div id="modal" class="{{{this.id}}} hide modal">
-                    <h1>{{{this.author}}}</h1>
-                    <p>{{{this.content}}}</p>
-                </div> --}}
                 {{/each}}
+                <!-- Modal -->
+                <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        {{#each messages}}
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="newsModalLabel">{{{format_date this.createdTimestamp}}} {{{this.author}}}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="storage modal-body">
+                                <p>{{{this.content}}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
 
 
             </div>
@@ -91,5 +99,5 @@
     <footer class="footer">
         <a href="options">Developer Options</a>
     </footer>
-    <script src="js/announcements.js" type="text/javascript"></script>
+    <script src="js/news.js" type="text/javascript"></script>
 </div>

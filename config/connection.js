@@ -4,7 +4,12 @@ require('dotenv').config();
 let sequelize;
 
 if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
+  sequelize = new Sequelize(process.env.JAWSDB_URL,
+    {
+      charset: "utf8mb4",
+      collate: "utf8mb4_unicode_ci"
+    }
+  );
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
