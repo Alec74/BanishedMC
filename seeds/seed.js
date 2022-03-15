@@ -5,17 +5,23 @@ require('dotenv').config();
 // const userData = require('./userData.json');
 const allData = require('./all.json');
 
+const user = process.env.DEV_USER;
+const email = process.env.DEV_EMAIL;
+const password = process.env.DEV_PASSWORD;
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-  User.truncate();
+  // User.truncate();
 
 
-  const users = await User.create({ 
-    name: `${process.env.DEV_USER}`,
-    email: `${process.env.DEV__EMIAL}`,
-    password: `${process.env.DEV_PASSWORD}`
-  });
+  const users = await User.bulkCreate([
+    {
+      id: 1,
+      name: `${user}`,
+      email: `${email}`,
+      password: `${password}`
+    }
+  ]);
 
   const messages = await Message.bulkCreate(allData, {})
 

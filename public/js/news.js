@@ -80,9 +80,103 @@ renderCards(p, j);
 let refreshData = async () => {
     console.log("data refreshing")
     const response = await fetch(`/api/message/discord`, {
-        method: 'POST'});
-    
+        method: 'POST'
+    });
+
 }
 
+
+// darkmode functionality
+let bg = document.querySelector('.container');
+let darkToggle = document.querySelector('.darkToggle');
+let paginationContainer = document.querySelector('.card2');
+let pageLinkBG = document.querySelectorAll('.page-link');
+let darkIcon = document.querySelector('.darkIcon');
+let card2BG = document.querySelector('.card2');
+let footer = document.querySelector('.footer');
+
+// bg.classList.toggle('lightModeBG');
+// paginationContainer.classList.toggle('paginationBGLight');
+// for (let i = 0; i < pageLinkBG.length; i++) {
+//     pageLinkBG[i].classList.toggle('pageLinkBGLight');
+// }
+// card2BG.classList.toggle('')
+// footer.classList.add('')
+
+$(document).ready(function () {
+    // console.log('test')
+    let dark = localStorage.getItem('dark');
+    darkToggle.addEventListener('click', function () {
+        // console.log('test')
+        let dark = localStorage.getItem('dark');
+        bg.classList.toggle('darkmodeBG');
+        paginationContainer.classList.toggle('paginationBG');
+        footer.classList.toggle('paginationBG');
+        for (let i = 0; i < pageLinkBG.length; i++) {
+            pageLinkBG[i].classList.toggle('pageLinkBG');
+        }
+        pageNum.classList.toggle('pageNumText');
+        card2BG.classList.toggle('borderC');
+        bg.classList.toggle('lightModeBG');
+        paginationContainer.classList.toggle('paginationBGLight');
+        for (let i = 0; i < pageLinkBG.length; i++) {
+            pageLinkBG[i].classList.toggle('pageLinkBGLight');
+        }
+        if (darkIcon.classList.contains('fa-solid')) {
+            darkIcon.classList.remove('fa-solid');
+            darkIcon.classList.add('fa-regular');
+        } else {
+            darkIcon.classList.remove('fa-solid');
+            darkIcon.classList.add('fa-solid');
+        }
+
+        // darkToggle.classList.add('light');
+        if (dark === 'true') {
+            localStorage.setItem('dark', false);
+            // console.log(dark)
+        } else {
+            localStorage.setItem('dark', true)
+        }
+        // console.log(localStorage)
+    })
+
+    if (dark === 'true') {
+        if (darkIcon.classList.contains('fa-solid')) {
+            darkIcon.classList.remove('fa-solid');
+            darkIcon.classList.add('fa-regular');
+        } else {
+            darkIcon.classList.remove('fa-solid');
+            darkIcon.classList.add('fa-solid');
+            bg.classList.toggle('lightModeBG');
+            paginationContainer.classList.toggle('paginationBGLight');
+            for (let i = 0; i < pageLinkBG.length; i++) {
+                pageLinkBG[i].classList.toggle('pageLinkBGLight');
+            }
+        }
+        bg.classList.toggle('darkmodeBG');
+        paginationContainer.classList.toggle('paginationBG');
+        footer.classList.toggle('paginationBG');
+        for (let i = 0; i < pageLinkBG.length; i++) {
+            pageLinkBG[i].classList.toggle('pageLinkBG');
+        }
+        pageNum.classList.toggle('pageNumText');
+        card2BG.classList.toggle('borderC');
+        bg.classList.toggle('lightModeBG');
+        paginationContainer.classList.toggle('paginationBGLight');
+        for (let i = 0; i < pageLinkBG.length; i++) {
+            pageLinkBG[i].classList.toggle('pageLinkBGLight');
+        }
+
+        console.log('dark mode')
+    } else {
+        bg.classList.toggle('lightModeBG');
+        paginationContainer.classList.toggle('paginationBGLight');
+        for (let i = 0; i < pageLinkBG.length; i++) {
+            pageLinkBG[i].classList.toggle('pageLinkBGLight');
+        }
+        console.log('light mode')
+    }
+
+})
 
 setInterval(refreshData, 3600000);

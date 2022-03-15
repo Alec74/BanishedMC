@@ -268,3 +268,60 @@ const renderCards = (i,j) => {
 };
 
 renderCards(0,9);
+
+// darkmode functionality
+let paginationContainer = document.querySelector('.card2');
+let pageLinkBG = document.querySelector('.page-link');
+let darkIcon = document.querySelector('.darkIcon');
+let card2BG = document.querySelector('.card2');
+
+// darkmode button
+console.log('test')
+$(document).ready(function () {
+    console.log('test')
+    let dark = localStorage.getItem('dark');
+    darkToggle.addEventListener('click', function () {
+        console.log('test')
+        let dark = localStorage.getItem('dark');
+        bg.classList.toggle('darkmodeBG');
+        paginationContainer.classList.toggle('paginationBG');
+        pageLinkBG.classList.toggle('pageLinkBG');
+        pageNum.classList.toggle('pageNumText');
+        card2BG.classList.toggle('borderC');
+        if (darkIcon.classList.contains('fa-solid')) {
+            darkIcon.classList.remove('fa-solid');
+            darkIcon.classList.add('fa-regular');
+        } else {
+            darkIcon.classList.remove('fa-solid');
+            darkIcon.classList.add('fa-solid');
+        }
+
+        // darkToggle.classList.add('light');
+        if (dark === 'true') {
+            localStorage.setItem('dark', false);
+            // console.log(dark)
+        } else {
+            localStorage.setItem('dark', true)
+        }
+        // console.log(localStorage)
+    })
+
+    if (dark === 'true') {
+        if (darkIcon.classList.contains('fa-solid')) {
+            darkIcon.classList.remove('fa-solid');
+            darkIcon.classList.add('fa-regular');
+        } else {
+            darkIcon.classList.remove('fa-solid');
+            darkIcon.classList.add('fa-solid');
+        }
+        bg.classList.toggle('darkmodeBG');
+        paginationContainer.classList.toggle('paginationBG');
+        pageLinkBG.classList.toggle('pageLinkBG');
+        pageNum.classList.toggle('pageNumText');
+        card2BG.classList.toggle('borderC');
+        // console.log('dark mode')
+    } else {
+        // console.log('light mode')
+    }
+
+})

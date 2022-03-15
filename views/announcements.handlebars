@@ -9,6 +9,8 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="/"><img id="navLogo" src="img/logo.png" alt="Highlands Logo"></a>
                 <div id="menu">
+                    <a class="nav-link darkToggle" aria-current="page" href="#"><i
+                        class="darkIcon fa-regular fa-moon fa-2xl"></i></a>
                     <a class="nav-link" aria-current="page" href="/announcements"><i
                             class="fa-solid fa-scroll fa-2xl"></i></a>
                     <a class="nav-link" href="https://discord.gg/banishedmc"><i
@@ -21,9 +23,8 @@
 
     </section>
     <!-- Navbar overlay -->
-    <section id="header"
-        style="background-image: linear-gradient(to top, rgba(255, 255, 255, 0.267), rgba(0,0,0,0.10));">
-        <div id="inner-header" class="text-center">
+    <section id="header">
+        <div id="inner-header" class="text-center font-title">
             <h1 id="header-title">
                 <span>Server News</span>
             </h1>
@@ -41,13 +42,13 @@
                             <ul class="pagination">
                                 <!-- the ids are referenced in announcements.js for functionality -->
                                 <li class="page-item"></li>
-                                <li id="discordNews" class="page-item"><a id="discordLink" class="page-link"
+                                <li id="discordNews" class="page-item font-title"><a id="discordLink" class="page-link"
                                         href="#">Discord News</a></li>
                                 <li class="page-link page-item" id="page-selector">
                                     <a href="#">
                                         <i id="pageLeft" class="fa-solid fa-angle-left"></i>
                                     </a>
-                                    <span id="pageNum">Page 1</span>
+                                    <span id="pageNum" class="font-title">Page 1</span>
                                     <a href="#">
                                         <i id="pageRight" class="fas fa-angle-right"></i>
                                     </a>
@@ -65,9 +66,9 @@
                     <a class='trigger modalbtn' data-bs-target="#newsModal" data-bs-toggle="modal" id="modal-link">
                         <div class="card1">
                             <div class="card1-body">
-                                <h3>{{{this.author}}}</h3>
-                                <h3>{{{format_date this.createdTimestamp}}}</h3>
-                                <h6 id="contentBody">{{{this.content}}}</h6>
+                                <h3 class="font-title">{{{this.author}}}</h3>
+                                <h3 class="font-title">{{{format_date this.createdTimestamp}}}</h3>
+                                <h6 id="contentBody" class="font-text">{{{this.content}}}</h6>
                             </div>
                         </div>
                     </a>
@@ -80,11 +81,11 @@
                         {{#each messages}}
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="newsModalLabel">{{{format_date this.createdTimestamp}}} {{{this.author}}}</h5>
+                                <h5 class="modal-title font-title" id="newsModalLabel">{{{format_date this.createdTimestamp}}} {{{this.author}}}</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <div class="storage modal-body">
+                            <div class="storage modal-body font-text">
                                 <p>{{{this.content}}}</p>
                             </div>
                         </div>
@@ -97,7 +98,8 @@
     </div>
     </section>
     <footer class="footer">
-        <a href="options">Developer Options</a>
+        {{!-- <a href="options">Developer Options</a> --}}
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/news.js" type="text/javascript"></script>
 </div>

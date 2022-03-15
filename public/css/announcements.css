@@ -4,6 +4,38 @@
     padding: 20px;
 }
 
+.font-title{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-text{
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* body{
+    background: none;
+    background-color: white;
+} */
+
+/* section#header{
+    background-image: none;
+} */
+
+#header {
+    color: #fff;
+    padding: 250px 0px;
+    /* background-position: center; */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    background: none;
+    
+    /* background-color: black; */
+    background: linear-gradient(rgba(20, 26, 35,0.55),rgba(20, 26, 35, 0.55)),
+				url("../img/minecraft.jpg") no-repeat center;
+	background-size: cover;
+    /* width: fill; */
+}
+
 nav {
     flex: 1;
     text-align: right;
@@ -36,10 +68,10 @@ p {
 }
 
 .container {
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    max-width: 100%;
+    margin-top: auto;
+    /* padding-left: 25px;
+    padding-right: 25px; */
 }
 
 .row {
@@ -90,14 +122,6 @@ iframe {
     list-style-type: none;
     margin: 0;
     padding: 25px 0;
-}
-
-#header {
-    color: #fff;
-    padding: 250px 0px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 /* */
@@ -233,6 +257,77 @@ iframe {
     display: block;
 }
 
+
+/* Dark mode styles */
+.darkmodeBG {
+    background-color: black;
+}
+
+.paginationBG{
+    background-color: #11100f;
+}
+
+.pageLinkBG{
+    background-color: black;
+    color: #c5c3c0;
+    border: 3px solid #494643;
+}
+
+.pageLinkBG:focus{
+    background-color: black;
+    color: #c5c3c0;
+    border: 3px solid #494643;
+}
+
+.pageNumText{
+    color: #c5c3c0;
+}
+
+
+.borderC{
+    border: 3px solid #494643;
+}
+
+.pageLinkBG:hover{
+    background-color: black;
+    color: #f5f5f5;
+}
+
+
+
+/* Light mode styles */
+.lightModeBG {
+    background-color: white;
+}
+
+.paginationBGLight{
+    background-color: white;
+}
+
+.pageLinkBGLight{
+    background-color: white;
+    color: black;
+    border: 3px solid #494643;
+}
+
+.pageLinkBGLight:focus{
+    color: black;
+    border: 3px solid #494643;
+}
+
+.pageNumText{
+    color: #c5c3c0;
+}
+
+
+.borderC{
+    border: 3px solid #494643;
+}
+
+.pageLinkBG:hover{
+    background-color: black;
+    color: #f5f5f5;
+}
 
 #modal-link:hover{
     cursor: pointer;
