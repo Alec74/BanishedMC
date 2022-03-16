@@ -262,10 +262,15 @@ iframe {
 
 .modal-body{
     font-size: 23px;
+    word-wrap: break-word;
 }
 
 .modal-title{
     font-size: 33px;
+}
+
+.img{
+    object-fit: cover;
 }
 
 
@@ -305,6 +310,10 @@ iframe {
     color: #f5f5f5;
 }
 
+.darkModeTxt{
+    color: white;
+    background-color: black;
+}
 
 
 /* Light mode styles */
@@ -340,6 +349,11 @@ iframe {
 .pageLinkBG:hover{
     background-color: black;
     color: #f5f5f5;
+}
+
+.lightModeTxt{
+    color: black;
+    background-color: white;
 }
 
 

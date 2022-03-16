@@ -72,6 +72,17 @@
                                 <p class="hide mention userID">{{{id}}}</p>
                                 {{/each}}
                                 {{/if}}
+                                {{#if this.message_attachments}}
+                                {{#each this.message_attachments}}
+                                    <p class="hide img">{{{url}}}</p>
+                                {{/each}}
+                                {{/if}}
+                                {{!-- {{#if this.message_embed}}
+                                {{#each this.message_embed}}
+                                    <p class="hide embed">{{{this.thumbnail.url}}}</p>
+                                {{/each}}
+                                {{/if}} --}}
+                                
                                 <h3 class="font-title">{{{this.author}}}</h3>
                                 <h3 class="font-title">{{{format_date this.createdTimestamp}}}</h3>
                                 <h6 id="contentBody" class="font-text">{{{this.content}}}</h6>
@@ -83,7 +94,7 @@
                 <!-- Modal -->
                 <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel"
                     aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
                         {{#each messages}}
                         <div class="modal-content">
                             <div class="modal-header">
@@ -94,6 +105,7 @@
                             </div>
                             <div class="storage modal-body font-text">
                                 <p>{{{this.content}}}</p>
+                                
                             </div>
                         </div>
                         {{/each}}

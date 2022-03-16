@@ -3,7 +3,7 @@ const { User } = require('../../models');
 
 
 // User-dev routes for logging in
-// TODO add update and post routes to be up to date with news channel
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);

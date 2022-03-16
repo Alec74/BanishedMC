@@ -32,6 +32,7 @@ const renderCards = (p, j) => {
             // console.log(c);
             let arrayA = [];
             let arrayB = [];
+
             //add all mentions id and usernames to an array
             for (let i = 0; i < c.length; i++) {
                 if (c[i].classList.contains('name')) {
@@ -40,13 +41,32 @@ const renderCards = (p, j) => {
                 if (c[i].classList.contains('userID')) {
                     arrayB.push(c[i]);
                 }
+
             }
             //replace the summary and content with usernames instead of ids
-            for (let j = 0; j < arrayA.length; j++){
+            for (let j = 0; j < arrayA.length; j++) {
                 let re = new RegExp(`<@!${arrayB[j].textContent}>`, 'g');
-                c[c.length-1].textContent = c[c.length-1].textContent.replaceAll(re, arrayA[j].textContent)
+                c[c.length - 1].textContent = c[c.length - 1].textContent.replaceAll(re, arrayA[j].textContent)
                 changeModal.textContent = changeModal.textContent.replaceAll(re, arrayA[j].textContent);
             }
+        }
+        let c = allContent[k].firstElementChild.firstElementChild.firstElementChild.children;
+        let arrayC = [];
+        for (let i = 0; i < c.length; i++) {
+            if (c[i].classList.contains('img')) {
+                arrayC.push(c[i]);
+                c[i].remove()
+            }
+        }
+
+        for (let g = 0; g < arrayC.length; g++) {
+            // console.log(arrayC[g].textContent)
+            let img = document.createElement("img");
+            img.src = arrayC[g].textContent;
+            img.classList.add("img-fluid");
+            img.classList.add("rounded");
+            // img.classList.add("flex-start");
+            changeModal.appendChild(img)
         }
         //show a specific content
         allContent[k].classList.remove('show');
@@ -130,6 +150,8 @@ let pageLinkBG = document.querySelectorAll('.page-link');
 let darkIcon = document.querySelector('.darkIcon');
 let card2BG = document.querySelector('.card2');
 let footer = document.querySelector('.footer');
+let modalContent = document.querySelectorAll('.modal-content');
+
 
 $(document).ready(function () {
     // console.log('test')
@@ -140,15 +162,20 @@ $(document).ready(function () {
         bg.classList.toggle('darkmodeBG');
         paginationContainer.classList.toggle('paginationBG');
         footer.classList.toggle('paginationBG');
-        for (let i = 0; i < pageLinkBG.length; i++) {
-            pageLinkBG[i].classList.toggle('pageLinkBG');
-        }
+        // for (let i = 0; i < pageLinkBG.length; i++) {
+        //     pageLinkBG[i].classList.toggle('pageLinkBG');
+        // }
         pageNum.classList.toggle('pageNumText');
         card2BG.classList.toggle('borderC');
         bg.classList.toggle('lightModeBG');
         paginationContainer.classList.toggle('paginationBGLight');
         for (let i = 0; i < pageLinkBG.length; i++) {
             pageLinkBG[i].classList.toggle('pageLinkBGLight');
+            pageLinkBG[i].classList.toggle('pageLinkBG');
+        }
+        for (let i = 0; i < modalContent.length; i++){
+            modalContent[i].classList.toggle('lightModeTxt');
+            modalContent[i].classList.toggle('darkModeTxt');
         }
         if (darkIcon.classList.contains('fa-solid')) {
             darkIcon.classList.remove('fa-solid');
@@ -180,12 +207,18 @@ $(document).ready(function () {
             for (let i = 0; i < pageLinkBG.length; i++) {
                 pageLinkBG[i].classList.toggle('pageLinkBGLight');
             }
+            for (let i = 0; i < modalContent.length; i++){
+                modalContent[i].classList.toggle('lightModeTxt');
+            }
         }
         bg.classList.toggle('darkmodeBG');
         paginationContainer.classList.toggle('paginationBG');
         footer.classList.toggle('paginationBG');
         for (let i = 0; i < pageLinkBG.length; i++) {
             pageLinkBG[i].classList.toggle('pageLinkBG');
+        }
+        for (let i = 0; i < modalContent.length; i++){
+            modalContent[i].classList.toggle('darkModeTxt');
         }
         pageNum.classList.toggle('pageNumText');
         card2BG.classList.toggle('borderC');
@@ -194,13 +227,18 @@ $(document).ready(function () {
         for (let i = 0; i < pageLinkBG.length; i++) {
             pageLinkBG[i].classList.toggle('pageLinkBGLight');
         }
-
+        for (let i = 0; i < modalContent.length; i++){
+            modalContent[i].classList.toggle('lightModeTxt');
+        }
         // console.log('dark mode')
     } else {
         bg.classList.toggle('lightModeBG');
         paginationContainer.classList.toggle('paginationBGLight');
         for (let i = 0; i < pageLinkBG.length; i++) {
             pageLinkBG[i].classList.toggle('pageLinkBGLight');
+        }
+        for (let i = 0; i < modalContent.length; i++){
+            modalContent[i].classList.toggle('lightModeTxt');
         }
         // console.log('light mode')
     }

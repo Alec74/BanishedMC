@@ -26,6 +26,9 @@ Message.init(
         message_embed: {
             type: DataTypes.JSON,
         },
+        message_attachments: {
+            type: DataTypes.JSON,
+        },
         mentions: {
             type: DataTypes.JSON,
         },

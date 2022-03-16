@@ -15,6 +15,7 @@ let message_embed = [];
 let mentions = [];
 let message_embed_url = [];
 let createdTimestamp = [];
+let attachments = [];
 
 let all = [];
 
@@ -31,7 +32,8 @@ let test = () => { //function being exported to server
                     author.push(messages.toJSON()[i].author.username); //authors
                     message_embed.push(messages.toJSON()[i].embeds);
                     mentions.push(messages.toJSON()[i].mentions.users.toJSON());
-                    createdTimestamp.push(messages.toJSON()[i].createdTimestamp)
+                    createdTimestamp.push(messages.toJSON()[i].createdTimestamp);
+                    attachments.push(messages.toJSON()[i].attachments.toJSON())
                     // console.log(createdTimestamp[i]);
                     all.push({
                         "id": i+1,
@@ -39,6 +41,7 @@ let test = () => { //function being exported to server
                         "message_id": message_id[i],
                         "author": author[i],
                         "message_embed": message_embed[i],
+                        "message_attachments": attachments[i],
                         "mentions": mentions[i],
                         "createdTimestamp": createdTimestamp[i]
                     })
@@ -50,8 +53,8 @@ let test = () => { //function being exported to server
                         message_embed_url.push(message_embed[k][0].url)
                     }
                 }
-                
-                // console.log(messages.toJSON())
+                // console.log(message_embed)
+                // console.log(attachments);
                 
 
 

@@ -5,9 +5,13 @@ require('dotenv').config();
 // const userData = require('./userData.json');
 const allData = require('./all.json');
 
-const user = process.env.DEV_USER;
-const email = process.env.DEV_EMAIL;
-const password = process.env.DEV_PASSWORD;
+const user1 = process.env.DEV_USER1;
+const email1 = process.env.DEV_EMAIL1;
+const password1 = process.env.DEV_PASSWORD1;
+const user2 = process.env.DEV_USER2;
+const email2 = process.env.DEV_EMAIL2;
+const password2 = process.env.DEV_PASSWORD2;
+// console.log(email2)
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -17,11 +21,20 @@ const seedDatabase = async () => {
   const users = await User.bulkCreate([
     {
       id: 1,
-      name: `${user}`,
-      email: `${email}`,
-      password: `${password}`
+      name: `${user1}`,
+      email: `${email1}`,
+      password: `${password1}`
+    },
+    {
+      id: 2,
+      name: `${user2}`,
+      email: `${email2}`,
+      password: `${password2}`
     }
-  ]);
+  ], {
+    individualHooks: true,
+    returning: true,
+  });
 
   const messages = await Message.bulkCreate(allData, {})
 
