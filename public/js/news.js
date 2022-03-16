@@ -95,14 +95,6 @@ let darkIcon = document.querySelector('.darkIcon');
 let card2BG = document.querySelector('.card2');
 let footer = document.querySelector('.footer');
 
-// bg.classList.toggle('lightModeBG');
-// paginationContainer.classList.toggle('paginationBGLight');
-// for (let i = 0; i < pageLinkBG.length; i++) {
-//     pageLinkBG[i].classList.toggle('pageLinkBGLight');
-// }
-// card2BG.classList.toggle('')
-// footer.classList.add('')
-
 $(document).ready(function () {
     // console.log('test')
     let dark = localStorage.getItem('dark');

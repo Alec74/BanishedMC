@@ -32,8 +32,25 @@ html, body {
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
+    color: #555;
 }
+
+a:hover{
+	text-decoration: none;
+    color: #555;
+}
+
+.page-item:not(:first-child) .page-link:focus{
+	box-shadow: none;
+}
+
+/* a:hover{
+	color: white;
+}
+a:focus{
+	color: white;
+} */
 
 p {
 	margin: 0;
@@ -176,6 +193,19 @@ p {
 		padding: 2px 7px;
 	}
 }
+
+
+@media only screen and (max-width: 455px) {
+    .nav-link{
+        display: none;
+    }
+    .navbar>.container-fluid{
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+}
+
 
 @media(min-width: 1250px) {
 	.title {
