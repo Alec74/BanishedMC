@@ -10,7 +10,7 @@
                 <a class="navbar-brand" href="/"><img id="navLogo" src="img/logo.png" alt="Highlands Logo"></a>
                 <div id="menu">
                     <a class="nav-link darkToggle" aria-current="page" href="#"><i
-                        class="darkIcon fa-regular fa-moon fa-2xl"></i></a>
+                            class="darkIcon fa-regular fa-moon fa-2xl"></i></a>
                     <a class="nav-link" aria-current="page" href="/announcements"><i
                             class="fa-solid fa-scroll fa-2xl"></i></a>
                     <a class="nav-link" href="https://discord.gg/banishedmc"><i
@@ -66,6 +66,12 @@
                     <a class='trigger modalbtn' data-bs-target="#newsModal" data-bs-toggle="modal" id="modal-link">
                         <div class="card1">
                             <div class="card1-body">
+                                {{#if this.mentions}}
+                                {{#each this.mentions}}
+                                <p class="hide mention name">{{{username}}}</p>
+                                <p class="hide mention userID">{{{id}}}</p>
+                                {{/each}}
+                                {{/if}}
                                 <h3 class="font-title">{{{this.author}}}</h3>
                                 <h3 class="font-title">{{{format_date this.createdTimestamp}}}</h3>
                                 <h6 id="contentBody" class="font-text">{{{this.content}}}</h6>
@@ -81,7 +87,8 @@
                         {{#each messages}}
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title font-title" id="newsModalLabel">{{{format_date this.createdTimestamp}}} {{{this.author}}}</h5>
+                                <h5 class="modal-title font-title" id="newsModalLabel">{{{format_date
+                                    this.createdTimestamp}}} {{{this.author}}}</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>

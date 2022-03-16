@@ -7,12 +7,48 @@ let pageNumContent = `Page ${num}`;
 let content = document.querySelectorAll('#contentBody');
 let modal = document.querySelectorAll(".modal-content");
 let modalLink = document.querySelectorAll('#modal-link');
+let mentions = document.querySelectorAll('.mention');
 
 let p = 0;
 let j = 9;
 
+let n = -1;
+mentions.forEach(el => {
+    el.classList.add(`num${n += 1}`);
+    // console.log(el)
+})
+// console.log(allContent[0].firstElementChild.firstElementChild.firstElementChild.firstElementChild);
+
+
 const renderCards = (p, j) => {
     for (let k = 0; k < allContent.length; k++) {
+        //get modal content
+        let changeModal = modal[k].lastElementChild.firstElementChild;
+        //if there is a mention
+        if (allContent[k].firstElementChild.firstElementChild.firstElementChild.firstElementChild.classList.contains('mention')) {
+            let a = allContent[k].firstElementChild.firstElementChild.firstElementChild.firstElementChild;
+            let b = allContent[k].firstElementChild.firstElementChild.firstElementChild.firstElementChild.nextElementSibling;
+            let c = allContent[k].firstElementChild.firstElementChild.firstElementChild.children;
+            // console.log(c);
+            let arrayA = [];
+            let arrayB = [];
+            //add all mentions id and usernames to an array
+            for (let i = 0; i < c.length; i++) {
+                if (c[i].classList.contains('name')) {
+                    arrayA.push(c[i]);
+                }
+                if (c[i].classList.contains('userID')) {
+                    arrayB.push(c[i]);
+                }
+            }
+            //replace the summary and content with usernames instead of ids
+            for (let j = 0; j < arrayA.length; j++){
+                let re = new RegExp(`<@!${arrayB[j].textContent}>`, 'g');
+                c[c.length-1].textContent = c[c.length-1].textContent.replaceAll(re, arrayA[j].textContent)
+                changeModal.textContent = changeModal.textContent.replaceAll(re, arrayA[j].textContent);
+            }
+        }
+        //show a specific content
         allContent[k].classList.remove('show');
         allContent[k].classList.add('hide');
     }
@@ -24,7 +60,7 @@ const renderCards = (p, j) => {
     }
 };
 
-let n = -1;
+n = -1;
 // console.log(content)
 content.forEach(el => {
     el.classList.add(`content${n += 1}`)
@@ -159,14 +195,14 @@ $(document).ready(function () {
             pageLinkBG[i].classList.toggle('pageLinkBGLight');
         }
 
-        console.log('dark mode')
+        // console.log('dark mode')
     } else {
         bg.classList.toggle('lightModeBG');
         paginationContainer.classList.toggle('paginationBGLight');
         for (let i = 0; i < pageLinkBG.length; i++) {
             pageLinkBG[i].classList.toggle('pageLinkBGLight');
         }
-        console.log('light mode')
+        // console.log('light mode')
     }
 
 })
