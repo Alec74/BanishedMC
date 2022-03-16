@@ -77,11 +77,18 @@
                                     <p class="hide img">{{{url}}}</p>
                                 {{/each}}
                                 {{/if}}
-                                {{!-- {{#if this.message_embed}}
+                                {{#if this.message_embed}}
                                 {{#each this.message_embed}}
-                                    <p class="hide embed">{{{this.thumbnail.url}}}</p>
+                                    <p class="hide type">{{{this.type}}}</p>
+                                    <p class="hide embedTitle">{{{this.title}}}</p>
+                                    <p class="hide embedDescriptions">{{{this.description}}}</p>
+                                    <p class="hide embedUrl">{{{this.url}}}</p>
+                                    {{#if this.thumbnail}}
+                                    <p class="hide thumbnailUrl">{{{this.thumbnail.url}}}</p>
+                                    {{/if}}
                                 {{/each}}
-                                {{/if}} --}}
+                                {{/if}}
+                                
                                 
                                 <h3 class="font-title">{{{this.author}}}</h3>
                                 <h3 class="font-title">{{{format_date this.createdTimestamp}}}</h3>

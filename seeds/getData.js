@@ -53,7 +53,7 @@ let test = () => { //function being exported to server
                         message_embed_url.push(message_embed[k][0].url)
                     }
                 }
-                // console.log(message_embed)
+                // console.log(messages)
                 // console.log(attachments);
                 
 

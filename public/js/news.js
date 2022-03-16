@@ -21,6 +21,7 @@ mentions.forEach(el => {
 
 
 const renderCards = (p, j) => {
+    //iterate through cards
     for (let k = 0; k < allContent.length; k++) {
         //get modal content
         let changeModal = modal[k].lastElementChild.firstElementChild;
@@ -37,9 +38,11 @@ const renderCards = (p, j) => {
             for (let i = 0; i < c.length; i++) {
                 if (c[i].classList.contains('name')) {
                     arrayA.push(c[i]);
+                    // c[i].remove();
                 }
                 if (c[i].classList.contains('userID')) {
                     arrayB.push(c[i]);
+                    // c[i].remove();
                 }
 
             }
@@ -47,27 +50,87 @@ const renderCards = (p, j) => {
             for (let j = 0; j < arrayA.length; j++) {
                 let re = new RegExp(`<@!${arrayB[j].textContent}>`, 'g');
                 c[c.length - 1].textContent = c[c.length - 1].textContent.replaceAll(re, arrayA[j].textContent)
-                changeModal.textContent = changeModal.textContent.replaceAll(re, arrayA[j].textContent);
+                changeModal.textContent = changeModal.textContent.replaceAll(re, `@${arrayA[j].textContent}`);
             }
         }
         let c = allContent[k].firstElementChild.firstElementChild.firstElementChild.children;
         let arrayC = [];
+        let type = [];
+        let embedTitles = [];
+        let embedDescriptions = [];
+        let embedUrl = [];
+        let thumbnailUrl = [];
+        //iterate through body of card content and process the hidden elements for data
         for (let i = 0; i < c.length; i++) {
             if (c[i].classList.contains('img')) {
                 arrayC.push(c[i]);
-                c[i].remove()
+                c[i].remove();
+            }
+            if(c[i].classList.contains('type')) {
+                type.push(c[i]);
+                c[i].remove();
+            }
+            if(c[i].classList.contains('embedTitle')) {
+                embedTitles.push(c[i]);
+                c[i].remove();
+            }
+            if(c[i].classList.contains('embedDescriptions')) {
+                embedDescriptions.push(c[i]);
+                c[i].remove();
+            }
+            if(c[i].classList.contains('embedUrl')) {
+                embedUrl.push(c[i]);
+                c[i].remove();
+            }
+            if(c[i].classList.contains('thumbnailUrl')) {
+                thumbnailUrl.push(c[i]);
+                c[i].remove();
             }
         }
-
+        //for as many images appear in messages, display them to modal
         for (let g = 0; g < arrayC.length; g++) {
             // console.log(arrayC[g].textContent)
             let img = document.createElement("img");
+            let hold = document.createElement("div");
+            hold.classList.add('card');
             img.src = arrayC[g].textContent;
             img.classList.add("img-fluid");
             img.classList.add("rounded");
             // img.classList.add("flex-start");
-            changeModal.appendChild(img)
+            hold.append(img);
+            changeModal.append(hold);
         }
+        
+        //for as many embeds appear, process them and display them  to modal
+        for (let g = 0; g < type.length; g++){
+            let hold = document.createElement("div");
+            hold.classList.add('card');
+            hold.style = "background-color: #2c2f33;";
+            let link = document.createElement("a");
+            link.classList.add('card-link');
+            let text = document.createElement('p');
+            link.textContent = embedTitles[g].textContent;
+            link.href = embedUrl[g].textContent;
+            link.target = '_blank';
+            link.style = 'color:blue; font-weight:bold;';
+            text.textContent = embedDescriptions[g].textContent;
+            hold.append(link);
+            hold.append(text);
+            if (thumbnailUrl[g]){
+                let thumbnail = document.createElement('img');
+                let body = document.createElement('div');
+                body.classList.add('card-body');
+                thumbnail.src = thumbnailUrl[g].textContent;
+                thumbnail.classList.add('img-fluid');
+                thumbnail.classList.add('img-rounded');
+                thumbnail.style = "max-height:200px;"
+                body.append(thumbnail);
+                hold.append(body);
+            }
+            changeModal.append(hold);
+        }
+        // console.log(type)
+
         //show a specific content
         allContent[k].classList.remove('show');
         allContent[k].classList.add('hide');
