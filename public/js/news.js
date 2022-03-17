@@ -308,4 +308,7 @@ $(document).ready(function () {
 
 })
 
-setInterval(refreshData, 3600000);
+setInterval(function(){
+    refreshData();
+}, 3600000);
+

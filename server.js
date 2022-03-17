@@ -1,4 +1,4 @@
-const test = require("./seeds/getData")
+const {test, getMembers} = require("./seeds/getData")
 const rateLimit = require("express-rate-limit");
 const path = require('path');
 const express = require('express');
@@ -55,4 +55,5 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
   test();
+  getMembers();
 });

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Message } = require('../../models');
 
-const test = require('../../seeds/getData');
+const {test} = require('../../seeds/getData');
 
 //GET all messages
 router.get('/', (req, res) => {
