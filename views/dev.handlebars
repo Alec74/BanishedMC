@@ -1,11 +1,81 @@
-<h1>You made it!</h1>
-<div>
-    <secion>
-        <h2>
-            Congrats!
-        </h2>
-        <p>
-            You did the thing!
-        </p>
-    </secion>
+<link rel="stylesheet" href="css/dev.css">
+
+
+
+<div class="container">
+    <section id="navbar">
+        <nav class="navbar navbar-expand">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img id="navLogo" src="img/logo.png" alt="Highlands Logo"></a>
+                <div id="menu">
+                    <a class="nav-link darkToggle" aria-current="page" href="#"><i
+                            class="darkIcon fa-regular fa-moon fa-2xl"></i></a>
+                    <a class="nav-link" aria-current="page" href="/announcements"><i
+                            class="fa-solid fa-scroll fa-2xl"></i></a>
+                    <a class="nav-link" href="https://discord.gg/banishedmc"><i
+                            class="fa-brands fa-discord fa-2xl"></i></a>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!-- Card with textarea to send to bot -->
+    <section id="header2">
+        <div id="inner-header" class="text-center font-title">
+            <div class="card" style="margin-left:auto;margin-right:auto;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:black;">Welcome to the "BanishedMC Announcements" Bot Page</h5>
+                    <h6 class="card-subtitle" style="color:black;">Use the box below to type the message you want the
+                        bot to send to the "| news" channel</h6>
+                    <div id="textArea" type="textarea">
+                    </div>
+                    <ul id="myUL">
+                    </ul>
+                    <button type="button" class="btn btn-primary send">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{{!-- Previos Messages --}}
+    <div class="row">
+        <div class="col-sm">
+            <button class="btn" id="logout">logout</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="card" style="margin-left:auto;margin-right:auto;">
+                <div class="card-body">
+                    <h4 class="card-title" style="color:black;">Recent Messages</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm my-3">
+            <div class="card" style="margin-left:auto;margin-right:auto;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:black;">{{{messages.[0].author}}}</h5>
+                    <p class="card-text">{{{messages.[0].content}}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm my-3">
+            <div class="card" style="margin-left:auto;margin-right:auto;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:black;">{{{messages.[1].author}}}</h5>
+                    <p class="card-text">{{{messages.[1].content}}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm my-3">
+            <div class="card" style="margin-left:auto;margin-right:auto;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:black;">{{{messages.[2].author}}}</h5>
+                    <p class="card-text">{{{messages.[2].content}}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script src="js/dev.js"></script>

@@ -1,6 +1,6 @@
-<h2>Login</h2>
+{{!-- <h2>Login</h2> --}}
 
-<form class="form login-form">
+{{!-- <form class="form login-form">
   <div class="form-group">
     <label for="email-login">email:</label>
     <input class="form-input" type="text" id="email-login" />
@@ -14,6 +14,53 @@
   </div>
 </form>
 
-<button  href="/dev">Dev Page</button>
+<button href="/dev">Dev Page</button> --}}
+<div class="container">
+  <section id="navbar">
+
+
+    <nav class="navbar navbar-expand">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img id="navLogo" src="img/logo.png" alt="Highlands Logo"></a>
+        <div id="menu">
+          <a class="nav-link darkToggle" aria-current="page" href="#"><i
+              class="darkIcon fa-regular fa-moon fa-2xl"></i></a>
+          <a class="nav-link" aria-current="page" href="/announcements"><i class="fa-solid fa-scroll fa-2xl"></i></a>
+          <a class="nav-link" href="https://discord.gg/banishedmc"><i class="fa-brands fa-discord fa-2xl"></i></a>
+        </div>
+      </div>
+    </nav>
+
+
+
+  </section>
+  <section id="header">
+    <div id="inner-header" class="text-center font-title">
+      <div class="card loginForm" style="width: 18rem;margin-left:auto;margin-right:auto;">
+        <div class="card-body">
+          <h5 class="card-title" style="color:black;">Please Login to Access the Announcement Bot</h5>
+          <form class="form login-form">
+            <div class="form-group">
+              <label for="email-login">Email address</label>
+              <input type="email" class="form-control form-input" id="email-login" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="password-login">Password</label>
+              <input type="password" class="form-control form-input" id="password-login" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary" >Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
 
 <script src="/js/login.js"></script>

@@ -1,10 +1,15 @@
 const sequelize = require('../config/connection');
 const { User, Message, DiscordUser } = require('../models');
 require('dotenv').config();
+const {getMembers, test} = require('./getData');
+
+getMembers();
+test();
 
 // const userData = require('./userData.json');
-const allData = require('./all.json');
-const allMembers = require('./allMembers.json');
+
+// console.log(allData);
+
 
 const user1 = process.env.DEV_USER1;
 const email1 = process.env.DEV_EMAIL1;
@@ -37,11 +42,17 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  const allData = require('./all.json');
   const messages = await Message.bulkCreate(allData, {});
 
+  const allMembers = require('./allMembers.json');
   const discorduser = await DiscordUser.bulkCreate(allMembers, {});
 
   process.exit(0);
 };
 
-seedDatabase();
+
+setTimeout(function(){
+  seedDatabase();
+}, 10000);
+

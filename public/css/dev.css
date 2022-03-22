@@ -1,0 +1,68 @@
+.container {
+    background-color: white;
+}
+
+#header2 {
+    color: #fff;
+    padding: 250px 0px;
+    background: none;
+
+    background-color: #2C2F33;
+    background-size: cover;
+}
+
+.send {
+    background: blue;
+}
+
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+#myUL li a {
+    border: 2px solid maroon;
+    margin-top: -1px;
+    /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    width: 40%;
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+}
+
+#textArea {
+    width: 70%;
+    min-height: 100px;
+    resize: vertical;
+    margin: 0 auto;
+    margin-top: 15px;
+    overflow: auto;
+    border: 1px solid black;
+    padding: 2px;
+    text-align: justify;
+    background: #7289da;
+    color: white;
+}
+
+.mention {
+    color:blue;
+}
+
+.previous {
+    color: white;
+}
+
+@media only screen and (max-width: 350px) {
+    #textArea{
+        width: 95%;
+    }
+}

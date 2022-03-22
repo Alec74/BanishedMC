@@ -14,7 +14,12 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dev');
+      setTimeout(function(){
+        document.location.replace('/dev');
+      }, 1000)
+      
+      // document.location.reload();
+      // console.log(response)
     } else {
       alert(response.statusText);
     }

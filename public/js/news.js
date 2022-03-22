@@ -197,11 +197,28 @@ renderCards(p, j);
 
 
 let refreshData = async () => {
-    console.log("data refreshing")
+    console.log("data refreshing");
     const response = await fetch(`/api/message/discord`, {
+        method: 'POST',
+    });
+    // console.log(response.json())
+    // setTimeout(function(){
+    //     location.reload();
+    // },4000)
+    const res2 = await fetch('/api/message')
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            console.log(data.length)
+        })
+};
+
+let refreshMembers = async () => {
+    console.log('members refreshing')
+    const response = await fetch('/api/members/discord', {
         method: 'POST'
     });
-
 }
 
 
@@ -308,7 +325,56 @@ $(document).ready(function () {
 
 })
 
-setInterval(function(){
-    refreshData();
-}, 3600000);
+// setInterval(function(){
 
+const getMessages = async () => {
+    await fetch('/api/message/discord')
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            // console.log(data);
+            // console.log(document.querySelector(`.content${data.length-1}`));
+            if (document.querySelector(`.content${data.length-1}`)){
+                console.log('up to date');
+            }else {
+                // console.log(data.length);
+                refreshData();
+                // setTimeout(function(){
+                //     location.reload();
+                // },5000)
+            }
+        })
+}
+getMessages();
+
+// const getMembers = async () => {
+//     await fetch('/api/members/discord')
+//         .then(res => {
+//             return res.json();
+//         })
+//         .then(data2 => {
+//             // await fetch('/api/members')
+//             //     .then(res2 => {
+//             //         return res2.json();
+//             //     })
+//             //     .then(data2 => {
+//             //         if (data2.length != data.length){
+//             //             console.log("hello")
+//             //         }
+//             //     })
+//             // return data;
+//             console.log(data2.length)
+//         })
+// }
+// getMembers();
+// let data = [];
+// data = getMembers();
+// console.log(data)
+    // refreshData();
+// }, 3600000);
+
+
+// setInterval(function(){
+    // refreshMembers();
+// }, 86400000);

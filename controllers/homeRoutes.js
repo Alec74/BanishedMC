@@ -36,7 +36,10 @@ router.get('/', async (req, res) => {
 // Prevent non logged in users from viewing the dev
 router.get('/dev', withAuth, async (req, res) => {
   try {
+    const allMessages = await Message.findAll();
+    const messages = allMessages.map((message) => message.get({plain: true}));
     res.render('dev', {
+      messages,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in
     });
